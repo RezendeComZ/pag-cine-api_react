@@ -1,6 +1,6 @@
 const config = {
   username: 'root',
-  password: '',
+  password: 'rezende46', // For github
   database: 'pagcine',
   host: 'localhost',
   dialect: 'mysql'
