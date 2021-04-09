@@ -1,11 +1,15 @@
 const express = require('express');
-const app = express();
 const cors = require('cors')
 
+const routes = require('./routes/index')
 
-app.listen(3333, () => {
-  console.log('server rodando na porta 3333')
+const app = express();
+
+app.listen(3030, () => {
+  console.log('server rodando na porta 3030')
 })
 
 app.use(cors())
 app.use(express.json()) // Content-type
+
+app.use(routes)
