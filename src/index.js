@@ -5,11 +5,11 @@ const routes = require('./routes/index')
 
 const app = express();
 
-app.listen(3030, () => {
-  console.log('server rodando na porta 3030')
-})
-
 app.use(cors())
 app.use(express.json()) // Content-type
+app.use(routes) // Carregar rotas
 
-app.use(routes)
+
+app.listen(3030, () => { // Porta para evitar conflito com outras apps tipo React
+  console.log('server rodando na porta 3030')
+})
