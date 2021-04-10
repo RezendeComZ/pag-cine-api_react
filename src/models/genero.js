@@ -1,29 +1,22 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('genero', {
+module.exports = (sequelize, DataType) => {
+  const Genero = sequelize.define('Genero', {
     id: {
-      autoIncrement: true,
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true
+      type: DataType.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
     },
-    nomeGenero: {
-      type: DataTypes.STRING(20),
-      allowNull: false
-    }
-  }, {
-    sequelize,
+    nomeGenero: DataType.STRING,
+  },
+  {
     tableName: 'genero',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id" },
-        ]
-      },
-    ]
-  });
-};
+    timestamps: false
+  })
+
+  Genero.associate = (listaDeModelos) => {
+    Genero.hasMany(listaDeModelos.Filme,{
+      foreignKey: 'genero_id',
+      as: 'filmes'
+    })
+  }
+  return Genero
+}

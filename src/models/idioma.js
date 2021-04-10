@@ -1,29 +1,22 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('idioma', {
+module.exports = (sequelize, DataType) => {
+  const Idioma = sequelize.define('Idioma', {
     id: {
-      autoIncrement: true,
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true
+      type: DataType.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
     },
-    nomeIdioma: {
-      type: DataTypes.STRING(20),
-      allowNull: false
-    }
-  }, {
-    sequelize,
+    nomeIdioma: DataType.STRING,
+  },
+  {
     tableName: 'idioma',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id" },
-        ]
-      },
-    ]
-  });
-};
+    timestamps: false
+  })
+
+  Idioma.associate = (listaDeModelos) => {
+    Idioma.hasMany(listaDeModelos.Filme,{
+      foreignKey: 'idioma_id',
+      as: 'filmes'
+    })
+  }
+  return Idioma
+}

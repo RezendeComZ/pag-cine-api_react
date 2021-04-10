@@ -1,107 +1,60 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('filme', {
+module.exports = (sequelize, DataType) => {
+  const Filme = sequelize.define('Filme', {
     id: {
-      autoIncrement: true,
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true
+      type: DataType.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
     },
     titulo: {
-      type: DataTypes.STRING(60),
+      type: DataType.STRING,
       allowNull: true
     },
     tituloOriginal: {
-      type: DataTypes.STRING(60),
-      allowNull: false
+      type: DataType.STRING,
     },
-    lancamento: {
-      type: DataTypes.DATEONLY,
-      allowNull: false
-    },
-    paisOrigem: {
-      type: DataTypes.STRING(20),
-      allowNull: false
-    },
-    duracao: {
-      type: DataTypes.TIME,
-      allowNull: false
-    },
-    sinopse: {
-      type: DataTypes.TEXT,
-      allowNull: true
-    },
+    lancamento: DataType.DATEONLY,
+    paisOrigem: DataType.STRING,
+    duracao: DataType.TIME,
+    sinopse: DataType.TEXT,
     rate: {
-      type: DataTypes.INTEGER,
+      type: DataType.INTEGER,
       allowNull: true
     },
-    exibicaoInicio: {
-      type: DataTypes.DATEONLY,
-      allowNull: false
-    },
-    exibicaoFinal: {
-      type: DataTypes.DATEONLY,
-      allowNull: false
-    },
+    exibicaoInicio: DataType.DATEONLY,
+    exibicaoFinal: DataType.DATEONLY,
     idioma_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'idioma',
-        key: 'id'
-      }
+      type: DataType.INTEGER,      
     },
-    genero_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'genero',
-        key: 'id'
-      }
-    },
+    genero_id: DataType.INTEGER,
     poster_url: {
-      type: DataTypes.STRING(150),
+      type: DataType.STRING,
       allowNull: true
     },
     trailer_url: {
-      type: DataTypes.STRING(150),
+      type: DataType.STRING,
       allowNull: true
     },
     classificacao: {
-      type: DataTypes.INTEGER,
+      type: DataType.INTEGER,
       allowNull: true
     }
-  }, {
-    sequelize,
+  },
+  {
     tableName: 'filme',
-    timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id" },
-          { name: "idioma_id" },
-          { name: "genero_id" },
-        ]
-      },
-      {
-        name: "fk_filme_idioma1_idx",
-        using: "BTREE",
-        fields: [
-          { name: "idioma_id" },
-        ]
-      },
-      {
-        name: "fk_filme_genero1_idx",
-        using: "BTREE",
-        fields: [
-          { name: "genero_id" },
-        ]
-      },
-    ]
-  });
-};
+    timestamps: false // por padrao ele espera 'created_at'e 'updated_at', por isso colocar false nesse caso
+  })
+
+  Filme.associate = (listaDeModelos) => {
+    Filme.belongsTo(listaDeModelos.Idioma, {
+      foreignKey: 'idioma_id',
+      as: 'idioma'
+    }),
+    Filme.belongsTo(listaDeModelos.Genero, {
+      foreignKey: 'genero_id',
+      as: 'genero'
+    }
+    )
+  }
+
+  return Filme
+}
