@@ -40,7 +40,8 @@ module.exports = (sequelize, DataType) => {
         type: DataType.INTEGER,
         allowNull: true
       },
-      sala_poltronas_id{
+      sala_poltronas_id:
+      {
         type: DataType.INTEGER,
         allowNull: true
       }
@@ -49,6 +50,6 @@ module.exports = (sequelize, DataType) => {
     tableName: 'ingresso',
     timestamps: false // por padrao ele espera 'created_at'e 'updated_at', por isso colocar false nesse caso
   })
-  }
+  
   return Ingresso
 }

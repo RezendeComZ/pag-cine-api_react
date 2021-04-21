@@ -8,10 +8,12 @@ module.exports = (sequelize, DataType) => {
       tipo:
       {
         type: DataType.STRING,
-      },{
+      }
+    },
+    {
         tableName: 'tipoPoltronas',
         timestamps: false
         }) 
-    }
+    
     return TipoPoltronas;
 }

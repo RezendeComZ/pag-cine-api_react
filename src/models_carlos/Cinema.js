@@ -7,26 +7,26 @@ module.exports = (sequelize, DataType) => {
       },
       bairro: {
         type: DataType.STRING,
-    },
-      CEP: {
-        type: DataType.INTEGER,
-    },
-      lougradoro: {
-        type: DataType.STRING,
-    },
-      cidade_id: {
-        type: DataType.INTEGER,  
-      }
-    {
-      tableName: 'filme',
-      timestamps: false // por padrao ele espera 'created_at'e 'updated_at', por isso colocar false nesse caso
-    })
-      Filme.belongsTo(listaDeModelos.Cidade, {
-        foreignKey: 'cidade_id',
-        as: 'cidade'
-      }
-      )
-    }
+      },
+        CEP: {
+          type: DataType.INTEGER,
+      },
+        lougradoro: {
+          type: DataType.STRING,
+        },
+        cidade_id: {
+          type: DataType.INTEGER,
+        }
+      },
+      {
+        tableName: 'cinema',
+        timestamps: false // por padrao ele espera 'created_at'e 'updated_at', por isso colocar false nesse caso
+      })    
   
+      // Filme.belongsTo(listaDeModelos.Cidade, {
+      //   foreignKey: 'cidade_id',
+      //   as: 'cidade'
+      //   })
+      // }
     return Cinema
-  }
+} 

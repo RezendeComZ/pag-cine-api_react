@@ -20,11 +20,12 @@ module.exports = (sequelize, DataType) => {
       userPassword: {
         type: DataType.STRING,
         allowNull: true
-      },
-      {
+      }
+    },
+    {
         tableName: 'usuario',
         timestamps: false
         }); 
-    }
+    
     return Usuario;
 }
