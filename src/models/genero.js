@@ -15,7 +15,7 @@ module.exports = (sequelize, DataType) => {
   Genero.associate = (listaDeModelos) => {
     Genero.hasMany(listaDeModelos.Filme,{
       foreignKey: 'genero_id',
-      as: 'filmes'
+      as: 'genero'
     })
   }
   return Genero
