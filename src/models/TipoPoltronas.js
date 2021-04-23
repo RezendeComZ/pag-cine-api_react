@@ -1,19 +1,16 @@
 module.exports = (sequelize, DataType) => {
-    const TipoPoltronas = sequelize.define('TipoPoltronas', {
-      id: {
-        type: DataType.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-      },
-      tipo:
-      {
-        type: DataType.STRING,
-      }
+  const TipoPoltronas = sequelize.define('TipoPoltronas', {
+    id: {
+      type: DataType.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
     },
-    {
-        tableName: 'tipoPoltronas',
-        timestamps: false
-        }) 
-    
-    return TipoPoltronas;
+    tipo: {
+      type: DataType.STRING,
+    }
+  }, {
+    tableName: 'tipoPoltronas',
+    timestamps: false
+  })
+  return TipoPoltronas;
 }

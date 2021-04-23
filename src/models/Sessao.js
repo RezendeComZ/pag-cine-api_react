@@ -6,13 +6,12 @@ module.exports = (sequelize, DataType) => {
       autoIncrement: true
     },
     dataHora: {
-      type: DataType.INTEGER,
-      allowNull: true
+      type: DataType.DATE
     }
-  },
-  {
+  }, {
     tableName: 'sessao',
     timestamps: false // por padrao ele espera 'created_at'e 'updated_at', por isso colocar false nesse caso
   })
-  return Sessao
+
+  return Sessao;
 }

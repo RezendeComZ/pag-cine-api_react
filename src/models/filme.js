@@ -52,7 +52,8 @@ module.exports = (sequelize, DataType) => {
     Filme.belongsTo(listaDeModelos.Genero, {
       foreignKey: 'genero_id',
       as: 'genero'
-    })
+    }
+    )
   }
 
   return Filme
