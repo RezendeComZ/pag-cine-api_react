@@ -10,6 +10,6 @@ app.use(express.json()) // Content-type
 app.use(routes) // Carregar rotas
 
 
-app.listen(3030, () => { // Porta para evitar conflito com outras apps tipo React
-  console.log('server rodando na porta 3030')
+app.listen(3333, () => { // Porta para evitar conflito com outras apps tipo React
+  console.log('server rodando na porta 3333')
 })
