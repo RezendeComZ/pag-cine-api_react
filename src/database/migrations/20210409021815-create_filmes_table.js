@@ -2,11 +2,11 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('filmes', {
+    await queryInterface.createTable('filme', {
       id: {
-      type: Sequelize.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
       },
       titulo: {
         type: Sequelize.STRING,
@@ -26,9 +26,19 @@ module.exports = {
       exibicaoInicio: Sequelize.DATEONLY,
       exibicaoFinal: Sequelize.DATEONLY,
       idioma_id: {
-        type: Sequelize.INTEGER,      
+        type: Sequelize.INTEGER,
+        references: {
+          model: "idioma",
+          key: "id"
+        }
       },
-      genero_id: Sequelize.INTEGER,
+      genero_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "genero",
+          key: "id"
+        }
+      },
       poster_url: {
         type: Sequelize.STRING,
         allowNull: true
@@ -45,6 +55,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-     await queryInterface.dropTable('filmes');
+    await queryInterface.dropTable('filme');
   }
 };
