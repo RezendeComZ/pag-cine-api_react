@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 const config = {
-  username: 'root',
-  password: '', // For github
+  username: process.env.DB_USER || 'root',
+  password: process.env.DB_PASS || '',
   database: 'pagcine',
   host: 'localhost',
   dialect: 'mysql'
