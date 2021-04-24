@@ -12,14 +12,9 @@ module.exports = {
     const { id } = req.params
     const filmeId = await Filme.findOne({
       where: {
-        id: id
+        id
       }
     });
-    console.log('entrou aqui')
     res.send(filmeId)
-  },
-  retornoJson(req, res) {
-    let textos = req.body
-    res.json(textos)
   }
 }
