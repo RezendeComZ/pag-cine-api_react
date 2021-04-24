@@ -33,6 +33,22 @@ module.exports = {
         poster_url: './img/posters/um-tio-quase-perfeito-2-poster-desktop.jpg',
         trailer_url: 'h_C6gFElZ9w',
         classificacao: 0,
+      },
+      {
+        titulo: 'O tempo com você',
+        tituloOriginal: 'O tempo com você',
+        lacamento: '2021-02-07',
+        paisOrigem: 'Brasil',
+        duracao: '01:52:00',
+        sinopse: 'Durante o verão, Hodaka (Kotaro Daigo) foge de sua casa em uma ilha periférica para chegar a Tóquio. Ele não tem dinheiro mas, depois de muitos dias, acaba encontrando trabalho como escritor freelance para uma revista duvidosa. Um dia, porém, Hodaka conhece uma garota no meio da agitação da cidade grande. Hina (Nana Mori) é uma garota alegre que vive sozinha com seu irmão mais novo, devido a uma série de circunstâncias.',
+        rate: 0,
+        exibicaoInicio: '2021-02-07',
+        exibicaoInicio: '2022-02-07',
+        idioma_id: 2,
+        genero_id: 5,
+        poster_url: './img/posters/o-tempo-com-voce-poster-desktop.jpg',
+        trailer_url: 'bFT34NnzPvM',
+        classificacao: 12,
       }
     ], {}),
 
