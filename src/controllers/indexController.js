@@ -16,5 +16,14 @@ module.exports = {
       }
     });
     res.send(filmeId)
-  }
+  },
+  async ultimos(req, res, next) {
+    const num = parseInt(req.params.num)
+    console.log(num)
+    const ultimosFilmes = await Filme.findAll({
+      limit: num,
+      order: [ [ 'id', 'DESC' ]]
+    });
+    res.send(ultimosFilmes)
+  },
 }
