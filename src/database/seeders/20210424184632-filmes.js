@@ -49,6 +49,22 @@ module.exports = {
         poster_url: './img/posters/o-tempo-com-voce-poster-desktop.jpg',
         trailer_url: 'bFT34NnzPvM',
         classificacao: 12,
+      },
+      {
+        titulo: 'Trolls 2',
+        tituloOriginal: 'Trolls 2',
+        lancamento: '2020-10-08',
+        paisOrigem: 'EUA',
+        duracao: '01:30:00',
+        sinopse: 'Em Trolls 2, a rainha Poppy (Anna Kendrick) e Branch (Justin Timberlake) fazem uma descoberta surpreendente: há outros mundos Troll além do seu, e suas diferenças criam grandes confrontos entre essas diversas tribos. Quando uma ameaça misteriosa coloca todos os Trolls do país em perigo, Poppy, Branch e seu grupo de amigos devem embarcar em uma jornada épica para criar harmonia entre os Trolls rivais e uní-los contra um mal maior.',
+        rate: 0,
+        exibicaoInicio: '2020-10-08',
+        exibicaoFinal: '2021-10-08',
+        idioma_id: 1,
+        genero_id: 2,
+        poster_url: './img/posters/trolls-2-poster-desktop.jpg',
+        trailer_url: 'gaNXC9VAtSc',
+        classificacao: 0,
       }
     ], {}),
 
