@@ -22,15 +22,15 @@ module.exports = (sequelize, DataType) => {
     timestamps: false // por padrao ele espera 'created_at'e 'updated_at', por isso colocar false nesse caso
   })
 
-  Cinema.associate = (listaDeModelos)=>{
-    
+  Cinema.associate = (listaDeModelos) => {
+
     Cinema.belongsTo(listaDeModelos.Cidade, {
       foreignKey: 'cidade_id',
-      as: 'cidade'
+      as: 'cidades'
     });
 
   }
- 
+
 
   return Cinema
 }

@@ -1,48 +1,53 @@
 module.exports = (sequelize, DataType) => {
     const Ingresso = sequelize.define('Ingresso', {
-      fime_id: 
-      {
+      id: {
         type: DataType.INTEGER,
-        allowNull: true
+        primaryKey: true,
+        autoIncrement: true
       },
-      fime_idioma_id: 
+      filme_id: 
       {
         type: DataType.INTEGER,
-        allowNull: true
+        allowNull: false
+      },
+      idioma_id: 
+      {
+        type: DataType.INTEGER,
+        allowNull: false
       },
       tipoIngresso_id: 
       {
         type: DataType.INTEGER,
-        allowNull: true
+        allowNull: false
       },
       usuario_id:
       {
         type: DataType.INTEGER,
-        allowNull: true
+        allowNull: false
       },
       sala_id:
       {
         type: DataType.INTEGER,
-        allowNull: true
+        allowNull: false
       },
-      sala_cinema_id:
+      cinema_id:
       {
         type: DataType.INTEGER,
-        allowNull: true
+        allowNull: false
       },
-      sala_cinema_cidade_id:
+       cidade_id:
       {
         type: DataType.INTEGER,
-        allowNull: true
+        allowNull: false
       },
-      sala_sessao_id:
+      sessao_id:
       {
         type: DataType.INTEGER,
-        allowNull: true
+        allowNull: false
       },
-      sala_poltronas_id:{
+      poltrona_id:{
         type: DataType.INTEGER,
-        allowNull: true
+        allowNull: false
       }
   },
   {

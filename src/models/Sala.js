@@ -7,35 +7,35 @@ module.exports = (sequelize, DataType) => {
       },
       tipoDeSala:{
         type: DataType.STRING,
-        allowNull: true
+        allowNull: false
       },
       capacidade:{
         type: DataType.INTEGER,
-        allowNull: true
+        allowNull: false
       },
       poltronasDisponiveis:{
         type: DataType.INTEGER,
-        allowNull: true
+        allowNull: false
       },
       poltronasOcupadas:{
         type: DataType.INTEGER,
-        allowNull: true
+        allowNull: false
       },
         cinema_id:{
             type: DataType.INTEGER,
-            allowNull: true
+            allowNull: false
         },
-        cinema_cidade_id:{
+        cidade_id:{
             type: DataType.INTEGER,
-            allowNull: true
+            allowNull: false
         },
         sessao_id:{
             type: DataType.INTEGER,
-            allowNull: true
+            allowNull: false
         },
-        poltronas_id:{
+        poltrona_id:{
             type: DataType.INTEGER,
-            allowNull: true
+            allowNull: false
         }
     },
     {
@@ -45,14 +45,14 @@ module.exports = (sequelize, DataType) => {
   
     Sala.associate = (listaDeModelos) => {
 
-      Sala.belongsTo(listaDeModelos.Idioma, {
+      Sala.belongsTo(listaDeModelos.Cinema, {
         foreignKey: 'cinema_id',
         as: 'cinema'
       });
 
-      Sala.belongsTo(listaDeModelos.Genero, {
-        foreignKey: 'cinema_cidade_id',
-        as: ''
+      Sala.belongsTo(listaDeModelos.Cidade, {
+        foreignKey: 'cidade_id',
+        as: 'cidade'
       });
 
       Sala.belongsTo(listaDeModelos.Genero, {
@@ -60,9 +60,9 @@ module.exports = (sequelize, DataType) => {
         as: 'sessao'
       });
       
-      Sala.belongsTo(listaDeModelos.Genero, {
-        foreignKey: 'poltronas_id',
-        as: 'poltronas'
+      Sala.belongsTo(listaDeModelos.Poltrona, {
+        foreignKey: 'poltrona_id',
+        as: 'poltrona'
       });
     }
     return Sala;

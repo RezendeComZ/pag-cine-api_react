@@ -7,7 +7,7 @@ module.exports = (sequelize, DataType) => {
     },
     titulo: {
       type: DataType.STRING,
-      allowNull: true
+      allowNull: false
     },
     tituloOriginal: {
       type: DataType.STRING,
@@ -18,17 +18,17 @@ module.exports = (sequelize, DataType) => {
     sinopse: DataType.TEXT,
     rate: {
       type: DataType.INTEGER,
-      allowNull: true
+      allowNull: false
     },
     exibicaoInicio: DataType.DATEONLY,
     exibicaoFinal: DataType.DATEONLY,
     idioma_id: {
-      type: DataType.INTEGER,      
+      type: DataType.INTEGER,
     },
     genero_id: DataType.INTEGER,
     poster_url: {
       type: DataType.STRING,
-      allowNull: true
+      allowNull: false
     },
     trailer_url: {
       type: DataType.STRING,
@@ -38,22 +38,20 @@ module.exports = (sequelize, DataType) => {
       type: DataType.INTEGER,
       allowNull: true
     }
-  },
-  {
+  }, {
     tableName: 'filme',
     timestamps: false // por padrao ele espera 'created_at'e 'updated_at', por isso colocar false nesse caso
   })
 
   Filme.associate = (listaDeModelos) => {
     Filme.belongsTo(listaDeModelos.Idioma, {
-      foreignKey: 'idioma_id',
-      as: 'idioma'
-    }),
-    Filme.belongsTo(listaDeModelos.Genero, {
-      foreignKey: 'genero_id',
-      as: 'genero'
-    }
-    )
+        foreignKey: 'idioma_id',
+        as: 'idioma'
+      }),
+      Filme.belongsTo(listaDeModelos.Genero, {
+        foreignKey: 'genero_id',
+        as: 'genero'
+      })
   }
 
   return Filme
