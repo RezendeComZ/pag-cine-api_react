@@ -5,16 +5,16 @@ module.exports = {
 
      await queryInterface.bulkInsert('idioma', [
        {
-        nomeIdoma: 'Português',
+        nomeIdioma: 'Português',
       },
        {
-        nomeIdoma: 'Inglês',
+        nomeIdioma: 'Inglês',
       },
        {
-        nomeIdoma: 'Espanhol',
+        nomeIdioma: 'Espanhol',
       },
        {
-        nomeIdoma: 'Francês',
+        nomeIdioma: 'Francês',
       }
     ], {});
 
