@@ -6,6 +6,7 @@ module.exports = {
   },
   async listaFilmes(req, res, next) {
     const lista = await Filme.findAll();
+    console.log(lista)
     res.send(lista)
   },
   async filme(req, res, next) {
