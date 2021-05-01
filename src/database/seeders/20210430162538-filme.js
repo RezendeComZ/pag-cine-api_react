@@ -41,7 +41,7 @@ module.exports = {
         lancamento: '2021-02-05',
         paisOrigem: 'EUA',
         duracao: '01:55:00',
-        sinopse: 'Minari se passa nos anos 80. David, um menino coreano-americano de sete anos de idade, que se depara com um novo ambiente e um modo de vida diferente quando seu pai, Jacob, muda sua família da costa oeste para a zona rural do Arkansas. Entediado com a nova rotina, David só começa a se adaptar com a chegada de sua vó. Enquanto isso, Jacob, decidido a criar uma fazenda em solo inexplorado, arrisca suas finanças, seu casamento e a estabilidade da família.',
+        sinopse: 'Paralelo ao nosso mundo, existe outro: um mundo de poderosos e perigoso monstros que controlam seus territórios com ferocidade mortal. Quando a Tenente Artemis (Milla Jovovich) e seu esquadrão de elite são transportados através de um portal que liga os dois mundos, eles vão ser confrontados com a experiência mais chocante de suas vidas. Em sua desesperada tentativa de voltar para casa, a corajosa tenente encontra um caçador misterioso (Tony Jaa), cujas habilidades únicas permitiram com que ele sobrevivesse nessa terra hostil. Enfrentando incansáveis e aterrorizantes ataques dos monstros, os dois guerreiros se unem para lutar contra eles e encontrar um meio de voltarem para casa.',
         rate: '95',
         exibicaoInicio: '2021-02-05',
         exibicaoFinal: '2021-03-05',
